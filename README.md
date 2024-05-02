@@ -4,10 +4,10 @@ Primeiro Trabalho para matéria Laboratório Paralela
 # Proposta:
 Execute os dois programas de Cálculo de Números Primos (Naive e Bag of Tasks) ,  disponíveis no material fornecido, usando as seguintes instruções de comunicação de envio ponto-a- ponto:
 
-MPI_Send
-MPI_Isend
-MPI_Rsend
-MPI_Ssend
+MPI_Send <br />
+MPI_Isend <br />
+MPI_Rsend <br />
+MPI_Ssend <br />
 
 Combinando com as operações de  MPI_Recv ou MPI_Irecv, sempre que possível.
 
