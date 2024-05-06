@@ -16,3 +16,6 @@ Para  o caso Bag of tasks - 6 combinações
  <br />  <br />
 Código Base para o Naive: https://github.com/gpsilva2003/MPI/blob/main/src/mpi_primos.c  <br />  <br />
 Código Base para o Bag:  https://github.com/gpsilva2003/MPI/blob/main/src/mpi_primosbag.c  <br />
+
+# Relatório
+https://docs.google.com/document/d/12FRizYP09WQGC0cXoU9gUNa9Z9fi0Tu9rDr1t8s76k4/edit?usp=sharing
