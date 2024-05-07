@@ -53,15 +53,24 @@ int main(int argc, char *argv[])
 	{
 		for (int origem = 1; origem < num_procs; origem++)
 		{
+			/*
+			Inicia uma operação de recebimento e não é bloqueante.
+			*/
 			MPI_Irecv(&valor, 1, MPI_INT, origem, etiq, MPI_COMM_WORLD, &pedido_recebe);
 			int flag = 0;
 			// MPI_Test(&pedido_recebe, &flag  , &estado);
+			//Esperando a mensagem chegar, se colocar MPI_Test as vezes da erro
 			MPI_Wait(&pedido_recebe, &estado);
 			total += valor;
 		}
 	}
 	else
 	{
+		/*
+		MPI_Rsend é um envio de bloqueio padrão
+		A diferença com MPI_Send é o 'R' que significa pronto; 
+		logo exige que o destinatário tenha emitido o recebimento correspondente antes que seja invocado
+		*/
         MPI_Rsend(&cont, 1, MPI_INT, 0, etiq, MPI_COMM_WORLD);
 	}
 

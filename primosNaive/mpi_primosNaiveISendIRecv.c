@@ -52,14 +52,22 @@ int main(int argc, char *argv[])
 
 	if (meu_ranque != 0)
 	{
+		/*
+		Inicia uma operação de envio de modo padrão e não é bloqueante.
+		*/
 		MPI_Isend(&cont, 1, MPI_INT, raiz, etiq, MPI_COMM_WORLD, &pedido_envia);
+		//Esperando a mensagem chegar, se colocar MPI_Test as vezes da erro
 		MPI_Wait(&pedido_envia, &estado);
 	}
 	else
 	{
 		for (int origem = 1; origem < num_procs; origem++)
 		{
+			/*
+			Inicia uma operação de recebimento e não é bloqueante.
+			*/
 			MPI_Irecv(&valor, 1, MPI_INT, origem, etiq, MPI_COMM_WORLD, &pedido_recebe);
+			//Esperando a mensagem chegar, se colocar MPI_Test as vezes da erro
 			MPI_Wait(&pedido_recebe, &estado);
 			total += valor;
 		}

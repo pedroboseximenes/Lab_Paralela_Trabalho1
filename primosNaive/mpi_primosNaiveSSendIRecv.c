@@ -50,6 +50,10 @@ int main(int argc, char *argv[])
 
 	if (meu_ranque != 0)
 	{
+		/*
+		ele será bloqueado até que o destinatário receba a mensagem. Como um envio de bloqueio.
+		Esta particularidade pode melhorar o desempenho, economizando o tempo normalmente gasto no aperto de mão com o processo de recebimento do MPI
+		*/
 		MPI_Ssend(&cont, 1, MPI_INT, 0, etiq, MPI_COMM_WORLD);
 	}
 	else
